@@ -1,0 +1,384 @@
+:root {
+  --primary-bg: #36384D;
+  --container-bg: #ffffff;
+  --accent: #232742;
+  --gradient: linear-gradient(90deg, #FF5379 0%, #FF693E 100%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'robotoRegular';
+  src: local('assets/fonts/Roboto-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'robotoBold';
+  src: local('assets/fonts/Roboto-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  background-color: var(--primary-bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  white-space: none;
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  width: 100%;
+  height: 100vh;
+}
+
+input[type='email'] {
+  width: 100%;
+  max-width: 376px;
+  
+  border: 2px solid #C8C8C8;
+  border-radius: 7px;
+  
+  padding: 19px 24px;
+  margin-bottom: 24px;
+  
+  font-family: 'robotoRegular', sans-serif;
+  color: var(--accent);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.01em;
+  
+  
+  outline: none;
+  
+  transition: border 0.3s ease-in-out;
+}
+
+input:focus {
+  border-color: var(--accent);
+}
+
+.submit-button {
+  width: 100%;
+  max-width: 376px;
+  
+  padding: 21px 73px;
+  
+  border: 1px solid transparent;
+  border-radius: 7px;
+  
+  color: var(--container-bg);
+  font-weight: normal;
+  font-size: 15px;
+  
+  background-color: var(--accent);
+  
+  cursor: pointer;
+}
+
+.submit-button.active {
+  background-image: var(--gradient);
+  
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.submit-button.active:hover {
+  box-shadow: 0 10px 10px #FF537985,
+              0 10px 10px #FF693E85;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  
+  width: 100%;
+  max-width: 930px;
+  height: auto;
+  
+  background-color: var(--container-bg);
+  
+  border-radius: 36px;
+  padding: 24px;
+}
+
+/*Left Side*/
+
+.left {
+  width: 100%;
+  max-width: 376px;
+  height: auto;
+  margin: 0 40px;
+}
+
+.title {
+  font-family: robotoRegular, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 53px;
+  letter-spacing: 0.03em;
+  
+  color: var(--accent);
+}
+
+.desc {
+  font-family: robotoRegular, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+ul {
+  list-style: none;
+  list-style-position: outside;
+  padding: 0;
+  margin: 27px 0 45px 0;
+}
+
+ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px ;
+  
+  font-family: robotoRegular, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+li .list-desc {
+  margin-left: 14px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 10px;
+  
+  font-family: robotoBold, sans-serif;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+/*Right Side*/
+
+.right {
+  width: 100%;
+  max-width: 400px;
+  height: 593px;
+  
+  border-radius: 14px;
+  background-image: url("./assets/images/illustration-sign-up-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 600px) {
+  body {
+    margin: 0;
+    background-color: var(--container-bg);
+  }
+  
+  main {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .card {
+    flex-direction: column-reverse;
+    width: 100vw;
+    height: 100vh;
+  
+    background-color: var(--container-bg);
+    
+    margin: 0;
+    padding: 0;
+  }
+  
+  .left {
+    width: 100%;
+    max-width: 327px;
+    
+    margin-bottom: 20px;
+  }
+  
+  .desc {
+    line-height: 23px;
+  }
+  
+  .title {
+    font-size: 38px;
+  }
+  
+  ul li {
+    align-items: flex-start;
+    font-size: 16px;
+  }
+  
+  input[type='email'] {
+    margin-bottom: 24px;
+    padding: 19px 24px;
+    
+    font-size: 14px;
+    letter-spacing: 0.01em;
+  }
+  
+  .submit-button {
+    width: 100%;
+    max-width: 327px;
+    
+    padding: 20px 48px;
+    
+    font-size: 14px;
+  }
+  
+  .right {
+    width: 100%;
+    max-width: 375px;
+    height: 284px;
+    
+    border-radius: 0 0 15px 15px;
+    background-image: url("./assets/images/illustration-sign-up-mobile.svg");
+  }
+  
+}
+
+.hidden {
+  display: none;
+}
+
+.success-message {
+  width: 100%;
+  max-width: 504px;
+  height: auto;
+  
+  padding: 48px 64px 64px;
+  
+  background-color: var(--container-bg);
+  
+  font-size: 16px;
+  
+  border-radius: 34px;
+}
+
+.success-message img {
+  width: 100%;
+  max-width: 64px;
+  height: auto;
+  
+  margin-bottom: 40px;
+}
+
+.success-message h3 {
+  margin-bottom: 23px;
+  
+  font-family: robotoBold, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 57px;
+  letter-spacing: 0.015em;
+  
+  color: var(--accent);
+}
+
+.success-message p {
+  font-family: robotoRegular, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.success-message p #email-display {
+  font-family: robotoBold, sans-serif;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.success-message button {
+  width: 100%;
+  padding: 18px 0;
+  
+  background-color: var(--accent);
+  
+  border: none;
+  border-radius: 6px;
+  
+  color: var(--container-bg);
+  font-family: robotoRegular, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 24px;
+  
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .success-message {
+    width: 100%;
+    max-width: 327px;
+    height: 100vh;
+    padding: 32px 24px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    font-size: 14px;
+  }
+  
+  .success-message h3 {
+    font-size: 32px;
+    line-height: 36px;
+    margin-bottom: 25px;
+  }
+  
+  .success-message p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  .success-message button {
+    width: 100%;
+    max-width: 327px;
+    
+    margin: 266px 0 40px 0;
+    
+    padding: 16px 0;
+    
+    font-size: 14px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+}
